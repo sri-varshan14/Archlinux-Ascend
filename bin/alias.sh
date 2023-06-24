@@ -1,3 +1,19 @@
+EXCLUDE_DIRS=(
+    "! -path /*.git/*"
+    "! -path /*go/*"
+    "! -path /*.bundle/*"
+    "! -path /*.cache/*"
+    "! -path /*.local/*"
+    "! -path /*.themes/*"
+    "! -path /*.config/*"
+    "! -path /*.codeintel/*"
+    "! -path /*python2.7/*"
+    "! -path /*python3.6/*"
+    "! -path /*__pycache__/*"
+    "! -path /*node_modules/*"
+    "! -path /*target/*"
+    "! -path /*build/*"
+)
 
 alias c="cargo"
 alias cr="cargo r"
@@ -26,6 +42,7 @@ alias sl='ls --color=auto --group-directories-first'
 alias la='ls -al --color=auto --group-directories-first'
 alias ll='ls -l --color=auto --group-directories-first'
 alias grep='grep --color=auto'
+alias cdf='cd "$(find $HOME -type f ${EXCLUDE_DIRS[@]} 2> /dev/null | fzf)"'
 
 alias rustbook='rustup docs --book'
 alias hibernate='sudo systemctl hibernate'

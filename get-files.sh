@@ -45,6 +45,11 @@ function update_btop() {
     cp -rf $HOME/.config/btop .
 }
 
+function update_nvim() {
+    cp ~rf $HOME/.config/nvim .
+    rm -rf nvim/.git
+}
+
 update_fish
 update_btop
 update_zellij
